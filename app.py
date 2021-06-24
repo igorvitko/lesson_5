@@ -55,12 +55,12 @@ def decrypt():
 
     :return:
     The page with original plaintext.
-
+    The format of page is, for example - "Decrypted result: Hello World!"
     """
 
     string = request.args.get('string', None)
 
-    if (string is None or string == "") and request.method == "GET":
+    if string is None and request.method == "GET":
 
         return "<form method = 'POST'> <p>Введите токен</p> <p><input name='string'>" \
                "<input type='submit' text='Подтвердить'></p></form>"
